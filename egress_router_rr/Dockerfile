@@ -15,6 +15,6 @@ yum install iputils iproute -y && \
 yum clean all && \
 rm -rf /var/cache/yum/*
 
-ADD egress-router-lb.sh /bin/egress-router-lb.sh
+ADD egress-router-rr.sh /bin/egress-router-rr.sh
 
-ENTRYPOINT /bin/egress-router-lb.sh
+ENTRYPOINT /bin/egress-router-rr.sh
