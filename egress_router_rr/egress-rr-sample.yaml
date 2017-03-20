@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: egress-1
+  labels:
+    name: egress-1
+  annotations:
+    pod.network.openshift.io/assign-macvlan: "true"
+spec:
+  containers:
+  - name: egress-router
+    image: <registry:port>/openshift/origin-egress-router-lb
+    securityContext:
+      privileged: true
+    env:
+    - name: EGRESS_SOURCE
+      value: <ip addy>
+    - name: EGRESS_GATEWAY
+      value: <ip addy>
+    - name: EGRESS_DESTINATION
+      value: 192.168.0.2 192.168.0.3 192.168.0.4
+  nodeSelector:
+    zone: <zone name>
+  securityContext: {}
+  serviceAccount: <SA Name>
+  serviceAccountName: <SA Name>
