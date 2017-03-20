@@ -1,5 +1,5 @@
 # openshift_egress_router
 Using Origin's Egress Router Template &amp; Expanding it
 
-#### OpenShift Egress Round Robin Router
+#### OpenShift Egress RR Router
 Uses IPtables in a round-robin fashion
